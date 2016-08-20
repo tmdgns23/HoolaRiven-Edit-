@@ -616,19 +616,19 @@ namespace HoolaRiven
             {
                 case "Spell1a":
                     LastQ = Utils.GameTimeTickCount;
-                    if (Qstrange && Orbwalker.ActiveMode != Orbwalking.OrbwalkingMode.None) Game.Say("/d");
+                    if (Qstrange && Orbwalker.ActiveMode != Orbwalking.OrbwalkingMode.None) Game.SendEmote(Emote.Dance);
                     QStack = 2;
                     if (Orbwalker.ActiveMode != Orbwalking.OrbwalkingMode.None && Orbwalker.ActiveMode != Orbwalking.OrbwalkingMode.LastHit && Orbwalker.ActiveMode != Orbwalking.OrbwalkingMode.Flee) Utility.DelayAction.Add((QD * 10) + 1, Reset);
                     break;
                 case "Spell1b":
                     LastQ = Utils.GameTimeTickCount;
-                    if (Qstrange && Orbwalker.ActiveMode != Orbwalking.OrbwalkingMode.None) Game.Say("/d");
+                    if (Qstrange && Orbwalker.ActiveMode != Orbwalking.OrbwalkingMode.None) Game.SendEmote(Emote.Dance);
                     QStack = 3;
                     if (Orbwalker.ActiveMode != Orbwalking.OrbwalkingMode.None && Orbwalker.ActiveMode != Orbwalking.OrbwalkingMode.LastHit && Orbwalker.ActiveMode != Orbwalking.OrbwalkingMode.Flee) Utility.DelayAction.Add((QD * 10) + 1, Reset);
                     break;
                 case "Spell1c":
                     LastQ = Utils.GameTimeTickCount;
-                    if (Qstrange && Orbwalker.ActiveMode != Orbwalking.OrbwalkingMode.None) Game.Say("/d");
+                    if (Qstrange && Orbwalker.ActiveMode != Orbwalking.OrbwalkingMode.None) Game.SendEmote(Emote.Dance);
                     QStack = 1;
                     if (Orbwalker.ActiveMode != Orbwalking.OrbwalkingMode.None && Orbwalker.ActiveMode != Orbwalking.OrbwalkingMode.LastHit && Orbwalker.ActiveMode != Orbwalking.OrbwalkingMode.Flee) Utility.DelayAction.Add((QLD * 10) + 3, Reset);
                     break;
@@ -661,7 +661,7 @@ namespace HoolaRiven
 
       private static void Reset()
         {
-            Game.Say("/d");
+            Game.SendEmote(Emote.Dance);
             Orbwalking.LastAATick = 0;
             Player.IssueOrder(GameObjectOrder.MoveTo, Player.Position.Extend(Game.CursorPos, Player.Distance(Game.CursorPos) + 10));
         }
